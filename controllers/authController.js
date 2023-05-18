@@ -156,8 +156,8 @@ const editUser = async (req, res) => {
 
 }
 const deleteUser = (req, res) => {
-    let id = req.body.id
-    userDb.deleteOne({ _id: id }).then(ss => {
+    let email = req.body.email
+    userDb.deleteOne({ email }).then(ss => {
         res.status(200).json({ status: 'ok', msg: 'user deleted' })
     }).catch(err => {
         console.log(err)
